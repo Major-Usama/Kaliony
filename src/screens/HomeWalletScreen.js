@@ -13,7 +13,7 @@ import {
   Dimensions,
 } from "react-native";
 import React from "react";
-
+import * as Animatable from "react-native-animatable";
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT = Dimensions.get("window").height;
 
@@ -67,9 +67,9 @@ const DATABestSelling = [
   },
 ];
 
-export default function HomeScreen({ navigation }) {
+export default function HomeWalletScreen({ navigation }) {
   const [search, setSearch] = React.useState("");
- 
+  const [show, setShow] = React.useState("");
 
   const renderItem = ({ item }) => (
     <TouchableOpacity style={styles.newProductsContainer} activeOpacity={0.7}>
@@ -99,11 +99,51 @@ export default function HomeScreen({ navigation }) {
         hidden={false}
         backgroundColor="#fff"
       />
+
+      <Animatable.View animation={"fadeInUpBig"} style={styles.bonusContainer}>
+        <Text style={styles.bonusText}>Bonus</Text>
+
+        <Text style={styles.bonusAmount}>12 500</Text>
+      </Animatable.View>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 30 }}
       >
-        {HeaderHome(setSearch, search, navigation)}
+        <View style={styles.homeHeaderContainer}>
+          <View style={styles.searchContainer}>
+            <TextInput
+              placeholder="Search"
+              placeholderTextColor={"rgba(60, 60, 67, 0.6)"}
+              style={styles.input}
+              onChangeText={setSearch}
+              value={search}
+            />
+
+            <TouchableOpacity
+              style={{ right: 26, zIndex: 999999 }}
+              onPress={() => setSearch("")}
+            >
+              <Image
+                style={styles.crossIcon}
+                source={require("../assets/icons/close.png")}
+              />
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.homeHeaderRightContainer}>
+            <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+              <Image
+                style={{ width: 25, height: 23.33, marginRight: 10 }}
+                source={require("../assets/icons/walletblue.png")}
+              />
+            </TouchableOpacity>
+
+            <Image
+              style={{ width: 28, height: 27 }}
+              source={require("../assets/icons/bell.png")}
+            />
+          </View>
+        </View>
 
         <View>
           <ScrollView
@@ -178,7 +218,7 @@ export default function HomeScreen({ navigation }) {
           >
             <Image
               style={styles.wideImage}
-              source={require("../assets/images/wideImage.jpg")}
+              source={require("../assets/images/wide2.jpg")}
             />
           </TouchableOpacity>
         </View>
@@ -207,7 +247,6 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-
     flex: 1,
     backgroundColor: "#ffff",
   },
@@ -287,49 +326,31 @@ const styles = StyleSheet.create({
     marginTop: 18,
     borderRadius: 15,
   },
+  bonusContainer: {
+    width: WIDTH - 40,
+    height: 64,
+    backgroundColor: "#5184E5",
+    borderRadius: 15,
+    position: "absolute",
+    zIndex: 9999,
+    alignSelf: "center",
+    top: 80,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingRight: 41,
+    paddingLeft: 35,
+  },
+
+  bonusAmount: {
+    fontSize: 16,
+    color: "#fff",
+    fontFamily: "SFBold",
+  },
+
+  bonusText: {
+    fontSize: 16,
+    color: "#fff",
+    fontFamily: "SFRegular",
+  },
 });
-function HeaderHome(setSearch, search, navigation) {
-  return (
-    <View style={styles.homeHeaderContainer}>
-      <View style={styles.searchContainer}>
-        <TextInput
-          placeholder="Search"
-          placeholderTextColor={"rgba(60, 60, 67, 0.6)"}
-          style={styles.input}
-          onChangeText={setSearch}
-          value={search}
-        />
-
-        <TouchableOpacity
-          style={{ right: 26, zIndex: 999999 }}
-          onPress={() => setSearch("")}
-        >
-          <Image
-            style={styles.crossIcon}
-            source={require("../assets/icons/close.png")}
-          />
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.homeHeaderRightContainer}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("HomeWalletScreen")}
-        >
-          <Image
-            style={{ width: 30, height: 30, marginRight: 10 }}
-            source={require("../assets/icons/wallet.png")}
-          />
-        </TouchableOpacity>
-       
-        <TouchableOpacity
-          onPress={() => navigation.navigate("NotificationsScreen")}
-        >
-        <Image
-          style={{ width: 28, height: 27 }}
-          source={require("../assets/icons/bell.png")}
-        />
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-}

@@ -12,6 +12,11 @@ import CatalogScreen from "../screens/CatalogScreen";
 import QRCodeScreen from "../screens/QRCodeScreen";
 import ShoppingCartScreen from "../screens/ShoppingCartScreen";
 import UserAccountScreen from "../screens/UserAccountScreen";
+import StoriesScreen from "../screens/StoriesScreen";
+import HomeWalletScreen from "../screens/HomeWalletScreen";
+import NotificationsScreen from "../screens/NotificationsScreen";
+import NotificationDetailScreen from "../screens/NotificationDetailScreen";
+import ProductsPageScreen from "../screens/ProductsPageScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +24,7 @@ export default function Navigation({ navigation }) {
   const [loaded] = useFonts({
     SFBold: require("../assets/fonts/SFProDisplay-Bold.ttf"),
     SFRegular: require("../assets/fonts/SFProDisplay-Regular.ttf"),
+    SFMedium: require("../assets/fonts/SFProDisplay-Medium.ttf"),
   });
   if (!loaded) {
     return false;
@@ -36,6 +42,7 @@ export default function Navigation({ navigation }) {
           component={RegistrationScreen}
         />
         <Stack.Screen name={"tabs"} component={MyTabs} />
+        <Stack.Screen name={"StoriesScreen"} component={StoriesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -99,7 +106,7 @@ function MyTabs() {
           },
         }}
         name="HomeScreen"
-        component={HomeScreen}
+        component={HomeStackfunc}
       />
 
       <Tab.Screen
@@ -123,7 +130,7 @@ function MyTabs() {
           },
         }}
         name="CatalogScreen"
-        component={CatalogScreen}
+        component={CatalogStackfunc}
       />
 
       <Tab.Screen
@@ -206,7 +213,11 @@ const HomeStack = createNativeStackNavigator();
 function HomeStackfunc() {
   return (
     <HomeStack.Navigator screenOptions={{ headerShown: false }}>
-      <HomeStack.Screen name="OverView" component={OverView} />
+      <HomeStack.Screen name="HomeScreen" component={HomeScreen} />
+      <HomeStack.Screen name="HomeWalletScreen" component={HomeWalletScreen} />
+      <HomeStack.Screen name="NotificationsScreen" component={NotificationsScreen} />
+      <HomeStack.Screen name="NotificationDetailScreen" component={NotificationDetailScreen} />
+      
     </HomeStack.Navigator>
   );
 }
@@ -216,7 +227,11 @@ const CatalogStack = createNativeStackNavigator();
 function CatalogStackfunc() {
   return (
     <CatalogStack.Navigator screenOptions={{ headerShown: false }}>
-      <CatalogStack.Screen name="Pricing" component={Pricing} />
+      <CatalogStack.Screen name="CatalogScreen" component={CatalogScreen} />
+      <CatalogStack.Screen name="ProductsPageScreen" component={ProductsPageScreen} />
+      <CatalogStack.Screen name="NotificationsScreen" component={NotificationsScreen} />
+      <CatalogStack.Screen name="NotificationDetailScreen" component={NotificationDetailScreen} />
+  
     </CatalogStack.Navigator>
   );
 }
