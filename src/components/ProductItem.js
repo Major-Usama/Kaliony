@@ -7,13 +7,23 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
-import Button from "./common/Button";
+import { useNavigation } from '@react-navigation/native';
 const WIDTH = Dimensions.get("window").width;
 
 export default function ProductItem(props) {
+  const navigation = useNavigation();
   return (
     <View style={styles.itemproductcontainer}>
-      <TouchableOpacity activeOpacity={0.7}>
+      <TouchableOpacity 
+      onPress={()=>navigation.navigate('ProductDetailsScreen',
+      {
+        image:props.image,
+        title:props.title,
+        price:props.price,
+      }
+      
+      )}
+      activeOpacity={0.7}>
         <Image style={styles.productImage} source={props.image} />
       </TouchableOpacity>
 

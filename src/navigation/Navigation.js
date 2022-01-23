@@ -17,6 +17,7 @@ import HomeWalletScreen from "../screens/HomeWalletScreen";
 import NotificationsScreen from "../screens/NotificationsScreen";
 import NotificationDetailScreen from "../screens/NotificationDetailScreen";
 import ProductsPageScreen from "../screens/ProductsPageScreen";
+import ProductDetailsScreen from "../screens/ProductDetailsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -34,7 +35,6 @@ export default function Navigation({ navigation }) {
   LogBox.ignoreAllLogs();
   return (
     <NavigationContainer>
-    
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name={"WelcomeScreen"} component={WelcomeScreen} />
         <Stack.Screen
@@ -229,9 +229,10 @@ function CatalogStackfunc() {
     <CatalogStack.Navigator screenOptions={{ headerShown: false }}>
       <CatalogStack.Screen name="CatalogScreen" component={CatalogScreen} />
       <CatalogStack.Screen name="ProductsPageScreen" component={ProductsPageScreen} />
+      <CatalogStack.Screen name="ProductDetailsScreen" component={ProductDetailsScreen} />
       <CatalogStack.Screen name="NotificationsScreen" component={NotificationsScreen} />
       <CatalogStack.Screen name="NotificationDetailScreen" component={NotificationDetailScreen} />
-  
+      
     </CatalogStack.Navigator>
   );
 }
