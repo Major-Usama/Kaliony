@@ -69,7 +69,7 @@ export default function NotificationDetailScreen({ navigation, route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 20,
     backgroundColor: "#fff",
   },
   notificationHeaderContainer: {
@@ -77,10 +77,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: 24,
+    marginTop:20,
   },
   homeHeaderRightContainer: {
     flexDirection: "row",
     alignItems: "center",
+    
   },
 
   title: {

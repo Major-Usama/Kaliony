@@ -30,14 +30,19 @@ export default function CatalogScreen({ navigation }) {
             <TouchableOpacity
               activeOpacity={0.7}
               onPress={() => navigation.navigate("ProductsPageScreen")}
-            >
+           
+           >
               <Image
                 style={styles.catalogItem}
                 source={require("../assets/images/Catalog/kits.png")}
               />
             </TouchableOpacity>
 
-            <TouchableOpacity activeOpacity={0.7}>
+            <TouchableOpacity
+               onPress={() => navigation.navigate("ProductsPageScreen")}
+           
+            activeOpacity={0.7}>
+              
               <Image
                 style={styles.catalogItem}
                 source={require("../assets/images/Catalog/eliquid.png")}
@@ -46,14 +51,20 @@ export default function CatalogScreen({ navigation }) {
           </View>
 
           <View style={styles.catalogFirstRow}>
-            <TouchableOpacity activeOpacity={0.7}>
+            <TouchableOpacity 
+               onPress={() => navigation.navigate("ProductsPageScreen")}
+           
+            activeOpacity={0.7}>
               <Image
                 style={styles.catalogItem}
                 source={require("../assets/images/Catalog/disposible.png")}
               />
             </TouchableOpacity>
 
-            <TouchableOpacity activeOpacity={0.7}>
+            <TouchableOpacity
+               onPress={() => navigation.navigate("ProductsPageScreen")}
+           
+            activeOpacity={0.7}>
               <Image
                 style={styles.catalogItem}
                 source={require("../assets/images/Catalog/parts.png")}
@@ -62,7 +73,10 @@ export default function CatalogScreen({ navigation }) {
           </View>
 
           <View style={styles.catalogFirstRow}>
-            <TouchableOpacity activeOpacity={0.7}>
+            <TouchableOpacity 
+               onPress={() => navigation.navigate("ProductsPageScreen")}
+           
+            activeOpacity={0.7}>
               <Image
                 style={styles.catalogItemlast}
                 source={require("../assets/images/Catalog/other.png")}
@@ -77,7 +91,7 @@ export default function CatalogScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 20,
     flex: 1,
     backgroundColor: "#ffff",
     paddingBottom: 20,
@@ -108,6 +122,7 @@ const styles = StyleSheet.create({
   homeHeaderContainer: {
     flexDirection: "row",
     alignItems: "center",
+    marginTop:20,
   },
 
   homeHeaderRightContainer: {

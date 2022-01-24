@@ -9,13 +9,12 @@ import {
   Image,
   TextInput,
   FlatList,
-  Button,
   Dimensions,
 } from "react-native";
 import React, { useState } from "react";
-import ProductItem from "../components/ProductItem";
 import { RadioButton } from "react-native-paper";
 import Modal from "react-native-modal";
+import ProductItemCompare from "../components/ProductItemCompare";
 const WIDTH = Dimensions.get("window").width;
 
 const DATA = [
@@ -57,15 +56,18 @@ const DATA = [
   },
 ];
 
-export default function ProductsPageScreen({ navigation }) {
+export default function ProductsComparePage({ navigation }) {
   const [search, setSearch] = React.useState("");
   const [isModalVisible, setModalVisible] = useState(false);
   const [checked, setChecked] = React.useState("first");
 
   const renderItem = ({ item }) => (
-    <ProductItem title={item.title} price={item.price} image={item.image} />
+    <ProductItemCompare
+      title={item.title}
+      price={item.price}
+      image={item.image}
+    />
   );
-
 
   return (
     <SafeAreaView style={styles.container}>
@@ -297,7 +299,7 @@ const styles = StyleSheet.create({
   homeHeaderContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop:20,
+    marginTop: 20,
   },
 
   homeHeaderRightContainer: {
