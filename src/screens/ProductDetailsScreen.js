@@ -103,13 +103,17 @@ export default function ProductDetailsScreen({ navigation, route }) {
         </View>
 
         <View style={styles.productImageContainer}>
+
           <TouchableWithoutFeedback
             onPress={() => navigation.navigate("ProductsComparePage")}
           >
+          <TouchableWithoutFeedback>
+
             <Image
               style={styles.compareIcon}
               source={require("../assets/images/products/compare.png")}
             />
+          </TouchableWithoutFeedback>
           </TouchableWithoutFeedback>
 
           <Image source={image} style={styles.productImage} />
@@ -251,6 +255,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
+    marginTop:20,
+
   },
 
   productImage: {

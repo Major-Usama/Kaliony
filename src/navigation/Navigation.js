@@ -21,6 +21,7 @@ import ProductDetailsScreen from "../screens/ProductDetailsScreen";
 import ProductsComparePage from "../screens/ProductsComparePage";
 import ProductDetailsCompareScreen from "../screens/ProductDetailsCompareScreen";
 
+
 const Stack = createNativeStackNavigator();
 
 export default function Navigation({ navigation }) {
@@ -229,6 +230,7 @@ function CatalogStackfunc() {
   return (
     <CatalogStack.Navigator screenOptions={{ headerShown: false }}>
       <CatalogStack.Screen name="CatalogScreen" component={CatalogScreen} />
+
       <CatalogStack.Screen
         name="ProductsPageScreen"
         component={ProductsPageScreen}
@@ -253,6 +255,7 @@ function CatalogStackfunc() {
         name="ProductDetailsCompareScreen"
         component={ProductDetailsCompareScreen}
       />
+      
     </CatalogStack.Navigator>
   );
 }
