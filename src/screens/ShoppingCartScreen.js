@@ -97,10 +97,21 @@ export default function ShoppingCartScreen({ navigation }) {
         </View>
 
         <View style={styles.cartItemDetailsContainer}>
-          <Image
-            style={styles.cartItemImage}
-            source={require("../assets/images/products/p1.jpg")}
-          />
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={() =>
+              navigation.navigate("ProductDetailsScreen", {
+                title: "SMOK Nord 50w Kit",
+                price: "21500 ֏",
+                image: require("../assets/images/products/p1.jpg"),
+              })
+            }
+          >
+            <Image
+              style={styles.cartItemImage}
+              source={require("../assets/images/products/p1.jpg")}
+            />
+          </TouchableOpacity>
 
           <View>
             <Text style={styles.cartItemTitle}>SMOK Nord 50w Kit</Text>
@@ -127,7 +138,7 @@ export default function ShoppingCartScreen({ navigation }) {
               </View>
             </View>
 
-            <Text style={styles.priceText}>21500</Text>
+            <Text style={styles.priceText}>21500 ֏</Text>
           </View>
         </View>
 
@@ -173,7 +184,11 @@ export default function ShoppingCartScreen({ navigation }) {
           </View>
         </View>
 
-        <TouchableOpacity activeOpacity={0.7} style={styles.buyNoewButton}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("CheckoutScreen")}
+          activeOpacity={0.7}
+          style={styles.buyNoewButton}
+        >
           <Text style={styles.buyNowText}>BUY NOW</Text>
         </TouchableOpacity>
       </ScrollView>
@@ -299,6 +314,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
     flexDirection: "row",
     alignItems: "center",
+    borderRadius: 8,
   },
 
   inputPromo: {
@@ -311,6 +327,7 @@ const styles = StyleSheet.create({
 
   totalAmountContainer: {
     width: WIDTH - 40,
+    borderRadius: 8,
     height: 130,
     backgroundColor: "#fff",
     shadowColor: "#000",
@@ -356,7 +373,7 @@ const styles = StyleSheet.create({
     width: WIDTH - 40,
     height: 50,
     backgroundColor: "#4467AA",
-    borderRadius: 5,
+    borderRadius: 15,
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "center",

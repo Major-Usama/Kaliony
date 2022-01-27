@@ -33,7 +33,13 @@ export default function ProductItem(props) {
 
       <View style={{ alignSelf: "flex-start" }}>
         <TouchableOpacity
-        onPress={()=>navigation.navigate('ShoppingCartScreen')}
+        onPress={()=>navigation.navigate('ShoppingCartScreen',
+        {
+          image:props.image,
+          title:props.title,
+          price:props.price,
+        }
+        )}
         style={styles.button}>
           <Text style={styles.addtoCartText}>Add to Cart</Text>
         </TouchableOpacity>

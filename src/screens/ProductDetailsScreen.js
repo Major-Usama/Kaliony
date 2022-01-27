@@ -103,17 +103,13 @@ export default function ProductDetailsScreen({ navigation, route }) {
         </View>
 
         <View style={styles.productImageContainer}>
-
           <TouchableWithoutFeedback
             onPress={() => navigation.navigate("ProductsComparePage")}
           >
-          <TouchableWithoutFeedback>
-
             <Image
               style={styles.compareIcon}
               source={require("../assets/images/products/compare.png")}
             />
-          </TouchableWithoutFeedback>
           </TouchableWithoutFeedback>
 
           <Image source={image} style={styles.productImage} />
@@ -221,6 +217,7 @@ export default function ProductDetailsScreen({ navigation, route }) {
 
       <View style={styles.floatingButtonsContainer}>
         <TouchableOpacity
+          onPress={() => navigation.navigate("CheckoutScreen")}
           style={{
             ...styles.button,
             backgroundColor: "#A7B8D8",
@@ -230,7 +227,9 @@ export default function ProductDetailsScreen({ navigation, route }) {
           <Text style={styles.addtoCartText}>Buy Now</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+        onPress={()=>navigation.navigate('ShoppingCartScreen')}
+        style={styles.button}>
           <Text style={styles.addtoCartText}>Add to Cart</Text>
         </TouchableOpacity>
       </View>
@@ -255,8 +254,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
-    marginTop:20,
-
+    marginTop: 20,
   },
 
   productImage: {

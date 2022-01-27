@@ -13,7 +13,7 @@ import {
 import React from "react";
 import CompareItem from "../components/CompareItem";
 
-export default function ProductDetailsCompareScreen() {
+export default function ProductDetailsCompareScreen({navigation}) {
   const [search, setSearch] = React.useState("");
   return (
     <SafeAreaView style={styles.container}>

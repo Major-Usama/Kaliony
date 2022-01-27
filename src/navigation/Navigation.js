@@ -20,7 +20,10 @@ import ProductsPageScreen from "../screens/ProductsPageScreen";
 import ProductDetailsScreen from "../screens/ProductDetailsScreen";
 import ProductsComparePage from "../screens/ProductsComparePage";
 import ProductDetailsCompareScreen from "../screens/ProductDetailsCompareScreen";
-
+import CheckoutScreen from "../screens/CheckoutScreen";
+import PaymentScreen from "../screens/PaymentScreen";
+import ShippingAddressScreen from "../screens/ShippingAddressScreen";
+import ShippingMethodScreen from "../screens/ShippingMethodScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -175,7 +178,7 @@ function MyTabs() {
           },
         }}
         name="ShoppingCartScreen"
-        component={ShoppingCartScreen}
+        component={CartStackfunc}
       />
 
       <Tab.Screen
@@ -255,28 +258,64 @@ function CatalogStackfunc() {
         name="ProductDetailsCompareScreen"
         component={ProductDetailsCompareScreen}
       />
-      
+      <CatalogStack.Screen
+        name="ShoppingCartScreen"
+        component={ShoppingCartScreen}
+      />
     </CatalogStack.Navigator>
   );
 }
 
-const qrStack = createNativeStackNavigator();
+// const qrStack = createNativeStackNavigator();
 
-function qrStackfunc() {
-  return (
-    <qrStack.Navigator screenOptions={{ headerShown: false }}>
-      <LeaderBoardStack.Screen name="LeaderBoard" component={LeaderBoard} />
-      <LeaderBoardStack.Screen name="LeaderBoard2" component={LeaderBoard2} />
-    </qrStack.Navigator>
-  );
-}
+// function qrStackfunc() {
+//   return (
+//     <qrStack.Navigator screenOptions={{ headerShown: false }}>
+//       <LeaderBoardStack.Screen name="LeaderBoard" component={LeaderBoard} />
+//       <LeaderBoardStack.Screen name="LeaderBoard2" component={LeaderBoard2} />
+//     </qrStack.Navigator>
+//   );
+// }
 
 const CartStack = createNativeStackNavigator();
 
 function CartStackfunc() {
   return (
     <CartStack.Navigator screenOptions={{ headerShown: false }}>
-      <CartStack.Screen name="Plaid" component={Plaid} />
+      <CartStack.Screen
+        name="ShoppingCartScreen"
+        component={ShoppingCartScreen}
+      />
+
+      <CartStack.Screen
+        name="ProductsComparePage"
+        component={ProductsComparePage}
+      />
+      <CartStack.Screen
+        name="ProductDetailsCompareScreen"
+        component={ProductDetailsCompareScreen}
+      />
+
+      <CartStack.Screen
+        name="ProductsPageScreen"
+        component={ProductsPageScreen}
+      />
+      <CartStack.Screen
+        name="ProductDetailsScreen"
+        component={ProductDetailsScreen}
+      />
+
+      <CartStack.Screen name="CheckoutScreen" component={CheckoutScreen} />
+      <CartStack.Screen name="PaymentScreen" component={PaymentScreen} />
+
+      <CartStack.Screen
+        name="ShippingAddressScreen"
+        component={ShippingAddressScreen}
+      />
+      <CartStack.Screen
+        name="ShippingMethodScreen"
+        component={ShippingMethodScreen}
+      />
     </CartStack.Navigator>
   );
 }

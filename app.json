@@ -2,7 +2,7 @@
   "expo": {
     "name": "Kaliony",
     "slug": "Kaliony",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -19,12 +19,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.devusama.kaliony",
-      "buildNumber": "1.0.1"
+      "buildNumber": "1.0.2"
     },
     "android": {
-       
       "package": "com.devusama.kaliony",
-      "versionCode": 2,
+      "versionCode": 3,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

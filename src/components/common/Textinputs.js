@@ -3,7 +3,10 @@ import React from "react";
 import { FloatingLabelInput } from "react-native-floating-label-input";
 import { AntDesign } from "@expo/vector-icons";
 
+
+
 export default function Textinputs(props) {
+  
   return (
     <View>
       <FloatingLabelInput
