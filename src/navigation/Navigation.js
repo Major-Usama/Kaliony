@@ -24,6 +24,8 @@ import CheckoutScreen from "../screens/CheckoutScreen";
 import PaymentScreen from "../screens/PaymentScreen";
 import ShippingAddressScreen from "../screens/ShippingAddressScreen";
 import ShippingMethodScreen from "../screens/ShippingMethodScreen";
+import MyOrdersScreen from "../screens/MyOrdersScreen";
+import MyOrderDetailsScreen from "../screens/MyOrderDetailsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -202,7 +204,7 @@ function MyTabs() {
           },
         }}
         name="UserAccountScreen"
-        component={UserAccountScreen}
+        component={userStackfunc}
       />
     </Tab.Navigator>
   );
@@ -316,6 +318,15 @@ function CartStackfunc() {
         name="ShippingMethodScreen"
         component={ShippingMethodScreen}
       />
+       <CartStack.Screen name="HomeWalletScreen" component={HomeWalletScreen} />
+      <CartStack.Screen
+        name="NotificationsScreen"
+        component={NotificationsScreen}
+      />
+      <CartStack.Screen
+        name="NotificationDetailScreen"
+        component={NotificationDetailScreen}
+      />
     </CartStack.Navigator>
   );
 }
@@ -325,7 +336,25 @@ const userStack = createNativeStackNavigator();
 function userStackfunc() {
   return (
     <userStack.Navigator screenOptions={{ headerShown: false }}>
-      <userStack.Screen name="Plaid" component={Plaid} />
+      <userStack.Screen name="UserAccountScreen" component={UserAccountScreen} />
+      <HomeStack.Screen name="HomeWalletScreen" component={HomeWalletScreen} />
+      <userStack.Screen
+        name="NotificationsScreen"
+        component={NotificationsScreen}
+      />
+      <userStack.Screen
+        name="NotificationDetailScreen"
+        component={NotificationDetailScreen}
+      />
+      <userStack.Screen
+        name="MyOrdersScreen"
+        component={MyOrdersScreen}
+      />
+      <userStack.Screen
+        name="MyOrderDetailsScreen"
+        component={MyOrderDetailsScreen}
+      />
+
     </userStack.Navigator>
   );
 }

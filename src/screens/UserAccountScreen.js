@@ -13,78 +13,23 @@ import {
 
 import React from "react";
 import UserAccountCard from "../components/UserAccountCard";
+import UserHeader from "../components/common/UserHeader";
 
-export default function UserAccountScreen({navigation}) {
+export default function UserAccountScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 50 }}
       >
-        <View style={styles.notificationHeaderContainer}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Image
-              source={require("../assets/icons/arrow-back.png")}
-              style={{ width: 13, height: 23 }}
-            />
-          </TouchableOpacity>
-
-          <Image
-            source={require("../assets/icons/logo.png")}
-            style={{ width: 106, height: 44 }}
-          />
-
-          <View style={styles.homeHeaderRightContainer}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("HomeWalletScreen")}
-            >
-              <Image
-                style={{ width: 30, height: 30, marginRight: 10 }}
-                source={require("../assets/icons/wallet.png")}
-              />
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() => navigation.navigate("NotificationsScreen")}
-            >
-              <Image
-                style={{ width: 28, height: 27 }}
-                source={require("../assets/icons/bell.png")}
-              />
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        <View style={styles.userPersonalInfoContainer}>
-          <Image
-            style={{ width: 80, height: 80 }}
-            source={require("../assets/images/eduard.png")}
-          />
-
-          <View style={{ marginLeft: 20 }}>
-            <Text style={styles.userName}>Eduard Terakyan</Text>
-
-            <Text style={styles.idText}>ID: 11122254</Text>
-
-            <View style={{ marginTop: 8 }}>
-              <Text style={styles.idText}>
-                Bonus:{" "}
-                <Text
-                  style={{
-                    ...styles.idText,
-                    fontFamily: "SFBold",
-                    color: "#5184E5",
-                  }}
-                >
-                  12 500
-                </Text>
-              </Text>
-            </View>
-          </View>
-        </View>
+        <UserHeader
+          // back={require('../assets/icons/arrow-back.png')}
+          back=""
+        />
 
         <View style={styles.useraccountCardsMainContainer}>
           <UserAccountCard
+          onPress={()=>navigation.navigate('MyOrdersScreen')}
             title="My orders"
             subtitle="Already have 10 orders"
           />
@@ -122,23 +67,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  userPersonalInfoContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginHorizontal: 20,
-    marginTop: 25,
-  },
-
-  userName: {
-    fontSize: 20,
-    color: "#303030",
-    fontFamily: "SFBold",
-  },
-  idText: {
-    fontSize: 14,
-    fontFamily: "SFregular",
-    color: "#808080",
-  },
   useraccountCardsMainContainer: {
     marginTop: 41,
   },
