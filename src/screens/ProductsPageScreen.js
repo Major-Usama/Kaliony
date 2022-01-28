@@ -66,7 +66,6 @@ export default function ProductsPageScreen({ navigation }) {
     <ProductItem title={item.title} price={item.price} image={item.image} />
   );
 
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.homeHeaderContainer}>
@@ -297,7 +296,7 @@ const styles = StyleSheet.create({
   homeHeaderContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop:20,
+    marginTop: 20,
   },
 
   homeHeaderRightContainer: {

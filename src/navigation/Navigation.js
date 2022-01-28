@@ -26,6 +26,9 @@ import ShippingAddressScreen from "../screens/ShippingAddressScreen";
 import ShippingMethodScreen from "../screens/ShippingMethodScreen";
 import MyOrdersScreen from "../screens/MyOrdersScreen";
 import MyOrderDetailsScreen from "../screens/MyOrderDetailsScreen";
+import UserShippingAddressScreen from '../screens/UserShippingAddressScreen'
+import EditUserShippingAddressScreen from "../screens/EditUserShippingAddressScreen";
+import UserSettingsScreen from "../screens/UserSettingsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -354,6 +357,20 @@ function userStackfunc() {
         name="MyOrderDetailsScreen"
         component={MyOrderDetailsScreen}
       />
+       <userStack.Screen
+        name="UserShippingAddressScreen"
+        component={UserShippingAddressScreen}
+      />
+
+        <userStack.Screen
+        name="EditUserShippingAddressScreen"
+        component={EditUserShippingAddressScreen}
+      />
+       <userStack.Screen
+        name="UserSettingsScreen"
+        component={UserSettingsScreen}
+      />
+
 
     </userStack.Navigator>
   );

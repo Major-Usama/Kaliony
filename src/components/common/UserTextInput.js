@@ -3,10 +3,11 @@ import React from "react";
 import { FloatingLabelInput } from "react-native-floating-label-input";
 import { AntDesign } from "@expo/vector-icons";
 
-export default function Textinputs(props) {
+export default function UserTextinput(props) {
   return (
     <View>
       <FloatingLabelInput
+        keyboardType={props.type}
         isPassword={props.password}
         customShowPasswordComponent={
           <AntDesign name="eye" size={24} color="black" />
@@ -14,7 +15,7 @@ export default function Textinputs(props) {
         customHidePasswordComponent={
           <AntDesign name="eyeo" size={24} color="black" />
         }
-        containerStyles={styles.inputContainerStyle}
+        containerStyles={{ ...styles.inputContainerStyle }}
         inputStyles={styles.input}
         customLabelStyles={{
           colorFocused: "#000",
@@ -37,14 +38,24 @@ export default function Textinputs(props) {
 
 const styles = StyleSheet.create({
   inputContainerStyle: {
-    backgroundColor: "rgba(255, 255, 255, 0.75)",
+    backgroundColor: "#FFFFFF",
     paddingHorizontal: 10,
     height: 64,
     width: 295,
-    borderRadius: 15,
+    borderRadius: 4,
     paddingTop: 5,
     marginBottom: 16,
     paddingRight: 20,
+    shadowColor: "#000",
+    marginHorizontal: 20,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
   input: {
     paddingHorizontal: 10,

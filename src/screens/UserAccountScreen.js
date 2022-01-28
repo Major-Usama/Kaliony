@@ -1,13 +1,9 @@
 import {
   SafeAreaView,
   StyleSheet,
-  Text,
   StatusBar,
   View,
-  TouchableOpacity,
-  Image,
   Platform,
-  Dimensions,
   ScrollView,
 } from "react-native";
 
@@ -23,22 +19,26 @@ export default function UserAccountScreen({ navigation }) {
         contentContainerStyle={{ paddingBottom: 50 }}
       >
         <UserHeader
-          // back={require('../assets/icons/arrow-back.png')}
           back=""
         />
 
         <View style={styles.useraccountCardsMainContainer}>
           <UserAccountCard
-          onPress={()=>navigation.navigate('MyOrdersScreen')}
+            onPress={() => navigation.navigate("MyOrdersScreen")}
             title="My orders"
             subtitle="Already have 10 orders"
           />
 
-          <UserAccountCard title="Shipping Adresses" subtitle="03 Addresses" />
+          <UserAccountCard
+            onPress={() => navigation.navigate("UserShippingAddressScreen")}
+            title="Shipping Adresses"
+            subtitle="03 Addresses"
+          />
 
           <UserAccountCard title="My reviews" subtitle="reviews for 5 items" />
 
           <UserAccountCard
+            onPress={() => navigation.navigate("UserSettingsScreen")}
             title="Settings"
             subtitle="Notification, Password, Languadge"
           />
