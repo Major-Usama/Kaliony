@@ -30,8 +30,7 @@ export default function CatalogScreen({ navigation }) {
             <TouchableOpacity
               activeOpacity={0.7}
               onPress={() => navigation.navigate("ProductsPageScreen")}
-           
-           >
+            >
               <Image
                 style={styles.catalogItem}
                 source={require("../assets/images/Catalog/kits.png")}
@@ -39,10 +38,9 @@ export default function CatalogScreen({ navigation }) {
             </TouchableOpacity>
 
             <TouchableOpacity
-               onPress={() => navigation.navigate("ProductsPageScreen")}
-           
-            activeOpacity={0.7}>
-              
+              onPress={() => navigation.navigate("ProductsPageScreen")}
+              activeOpacity={0.7}
+            >
               <Image
                 style={styles.catalogItem}
                 source={require("../assets/images/Catalog/eliquid.png")}
@@ -51,10 +49,10 @@ export default function CatalogScreen({ navigation }) {
           </View>
 
           <View style={styles.catalogFirstRow}>
-            <TouchableOpacity 
-               onPress={() => navigation.navigate("ProductsPageScreen")}
-           
-            activeOpacity={0.7}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("ProductsPageScreen")}
+              activeOpacity={0.7}
+            >
               <Image
                 style={styles.catalogItem}
                 source={require("../assets/images/Catalog/disposible.png")}
@@ -62,9 +60,9 @@ export default function CatalogScreen({ navigation }) {
             </TouchableOpacity>
 
             <TouchableOpacity
-               onPress={() => navigation.navigate("ProductsPageScreen")}
-           
-            activeOpacity={0.7}>
+              onPress={() => navigation.navigate("ProductsPageScreen")}
+              activeOpacity={0.7}
+            >
               <Image
                 style={styles.catalogItem}
                 source={require("../assets/images/Catalog/parts.png")}
@@ -73,10 +71,10 @@ export default function CatalogScreen({ navigation }) {
           </View>
 
           <View style={styles.catalogFirstRow}>
-            <TouchableOpacity 
-               onPress={() => navigation.navigate("ProductsPageScreen")}
-           
-            activeOpacity={0.7}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("ProductsPageScreen")}
+              activeOpacity={0.7}
+            >
               <Image
                 style={styles.catalogItemlast}
                 source={require("../assets/images/Catalog/other.png")}
@@ -122,7 +120,7 @@ const styles = StyleSheet.create({
   homeHeaderContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop:20,
+    marginTop: Platform.OS === "android" ? 0 : 20,
   },
 
   homeHeaderRightContainer: {
@@ -176,14 +174,15 @@ function HeaderCatalog(setSearch, search, navigation) {
       </View>
 
       <View style={styles.homeHeaderRightContainer}>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => navigation.navigate("HomeWalletScreen")}
         >
           <Image
             style={{ width: 30, height: 30, marginRight: 10 }}
             source={require("../assets/icons/wallet.png")}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
+        <View style={{marginRight:20,}} />
 
         <Image
           style={{ width: 28, height: 27 }}

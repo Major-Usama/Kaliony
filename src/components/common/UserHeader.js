@@ -17,14 +17,15 @@ export default function UserHeader(props) {
         />
 
         <View style={styles.homeHeaderRightContainer}>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => navigation.navigate("HomeWalletScreen")}
           >
             <Image
               style={{ width: 30, height: 30, marginRight: 10 }}
               source={require("../../assets/icons/wallet.png")}
             />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
+          <View />
 
           <TouchableOpacity
             onPress={() => navigation.navigate("NotificationsScreen")}
@@ -73,6 +74,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: 24,
+    marginTop:Platform.OS==='android'?0:20
   },
   homeHeaderRightContainer: {
     flexDirection: "row",

@@ -34,14 +34,15 @@ export default function CheckoutScreen({ navigation }) {
           />
 
           <View style={styles.homeHeaderRightContainer}>
-            <TouchableOpacity
+          <View style={{marginRight:20,}} />
+            {/* <TouchableOpacity
               onPress={() => navigation.navigate("HomeWalletScreen")}
             >
               <Image
                 style={{ width: 30, height: 30, marginRight: 10 }}
                 source={require("../assets/icons/wallet.png")}
               />
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <TouchableOpacity
               onPress={() => navigation.navigate("NotificationsScreen")}
@@ -65,7 +66,7 @@ export default function CheckoutScreen({ navigation }) {
           </View>
 
           <TouchableOpacity
-          onPress={()=>navigation.navigate('ShippingAddressScreen')}
+            onPress={() => navigation.navigate("ShippingAddressScreen")}
             activeOpacity={0.8}
             style={styles.addressBoxContainer}
           >
@@ -121,7 +122,7 @@ export default function CheckoutScreen({ navigation }) {
           </View>
 
           <TouchableOpacity
-          onPress={()=>navigation.navigate('ShippingMethodScreen')}
+            onPress={() => navigation.navigate("ShippingMethodScreen")}
             activeOpacity={0.8}
             style={{
               ...styles.addressBoxContainer,
@@ -197,6 +198,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: 24,
+    marginTop: Platform.OS === "android" ? 0 : 20,
   },
   homeHeaderRightContainer: {
     flexDirection: "row",

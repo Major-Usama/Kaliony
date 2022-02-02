@@ -69,10 +69,11 @@ const DATABestSelling = [
 
 export default function HomeScreen({ navigation }) {
   const [search, setSearch] = React.useState("");
- 
 
   const renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.newProductsContainer} activeOpacity={0.7}>
+    <TouchableOpacity
+    onPress={()=>navigation.navigate('ProductsPageScreen')}
+    style={styles.newProductsContainer} activeOpacity={0.7}>
       <Image
         style={{ width: 130, height: 130, marginRight: 20 }}
         source={item.image}
@@ -83,7 +84,9 @@ export default function HomeScreen({ navigation }) {
   );
 
   const renderItemBestSelling = ({ item }) => (
-    <TouchableOpacity style={styles.newProductsContainer} activeOpacity={0.7}>
+    <TouchableOpacity 
+    onPress={()=>navigation.navigate('ProductsPageScreen')}
+    style={styles.newProductsContainer} activeOpacity={0.7}>
       <Image
         style={{ width: 130, height: 130, marginRight: 20 }}
         source={item.image}
@@ -206,7 +209,7 @@ export default function HomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 40,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 20,
     flex: 1,
     backgroundColor: "#ffff",
   },
@@ -237,7 +240,7 @@ const styles = StyleSheet.create({
   homeHeaderContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop:20,
+    marginTop: Platform.OS === "android" ? 0 : 20,
   },
 
   homeHeaderRightContainer: {
@@ -312,22 +315,23 @@ function HeaderHome(setSearch, search, navigation) {
       </View>
 
       <View style={styles.homeHeaderRightContainer}>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => navigation.navigate("HomeWalletScreen")}
         >
           <Image
             style={{ width: 30, height: 30, marginRight: 10 }}
             source={require("../assets/icons/wallet.png")}
           />
-        </TouchableOpacity>
-       
+        </TouchableOpacity> */}
+         <View style={{marginRight:20,}} />
+
         <TouchableOpacity
           onPress={() => navigation.navigate("NotificationsScreen")}
         >
-        <Image
-          style={{ width: 28, height: 27 }}
-          source={require("../assets/icons/bell.png")}
-        />
+          <Image
+            style={{ width: 28, height: 27 }}
+            source={require("../assets/icons/bell.png")}
+          />
         </TouchableOpacity>
       </View>
     </View>

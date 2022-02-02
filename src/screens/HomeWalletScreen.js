@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
   homeHeaderContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop:20,
+    marginTop: Platform.OS === "android" ? 0 : 20,
   },
 
   homeHeaderRightContainer: {

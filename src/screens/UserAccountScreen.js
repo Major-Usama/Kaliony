@@ -18,9 +18,7 @@ export default function UserAccountScreen({ navigation }) {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 50 }}
       >
-        <UserHeader
-          back=""
-        />
+        <UserHeader back="" />
 
         <View style={styles.useraccountCardsMainContainer}>
           <UserAccountCard
@@ -35,15 +33,23 @@ export default function UserAccountScreen({ navigation }) {
             subtitle="03 Addresses"
           />
 
-          <UserAccountCard title="My reviews" subtitle="reviews for 5 items" />
+          <UserAccountCard
+            // onPress={() => navigation.navigate("MyReviewScreen")}
+            title="My reviews"
+            subtitle="reviews for 5 items"
+          />
 
           <UserAccountCard
             onPress={() => navigation.navigate("UserSettingsScreen")}
             title="Settings"
-            subtitle="Notification, Password, Languadge"
+            subtitle="Notification, Password, Language"
           />
 
-          <UserAccountCard title="Shop Adresses" subtitle="Yerevan,Armenia" />
+          <UserAccountCard
+            onPress={() => navigation.navigate("ShopAdressScreen")}
+            title="Shop Adresses"
+            subtitle="Yerevan,Armenia"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -61,6 +67,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: 24,
+    marginTop:Platform.OS==='android'?0:20
   },
   homeHeaderRightContainer: {
     flexDirection: "row",

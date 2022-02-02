@@ -13,9 +13,9 @@ import {
 import React from "react";
 import Button from "../components/common/Button";
 const WIDTH = Dimensions.get("window").width;
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 export default function WelcomeScreen() {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar
@@ -23,7 +23,7 @@ export default function WelcomeScreen() {
         hidden={false}
         backgroundColor="#151515"
       />
-   
+
       <Text style={styles.welcomeToText}> Welcome to</Text>
 
       <Image
@@ -33,7 +33,7 @@ export default function WelcomeScreen() {
 
       <View style={styles.bottomButtonsContainer}>
         <Button
-         onPress={()=>navigation.navigate('RegistrationScreen')}
+          onPress={() => navigation.navigate("RegistrationScreen")}
           bColor="#fff"
           title="UNDER 18"
           bg="#151515"
@@ -42,7 +42,7 @@ export default function WelcomeScreen() {
         />
 
         <Button
-         onPress={()=>navigation.navigate('RegistrationScreen')}
+          onPress={() => navigation.navigate("RegistrationScreen")}
           bColor="#5184E5"
           title="18+"
           bg="#5184E5"
@@ -50,7 +50,6 @@ export default function WelcomeScreen() {
           width={WIDTH - 130}
         />
       </View>
-      
     </SafeAreaView>
   );
 }
@@ -67,7 +66,7 @@ const styles = StyleSheet.create({
     lineHeight: 29,
     color: "#fff",
     textAlign: "center",
-    fontFamily:'SFRegular',
+    fontFamily: "SFRegular",
     marginTop: 110,
   },
   logo: {

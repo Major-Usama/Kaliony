@@ -26,9 +26,14 @@ import ShippingAddressScreen from "../screens/ShippingAddressScreen";
 import ShippingMethodScreen from "../screens/ShippingMethodScreen";
 import MyOrdersScreen from "../screens/MyOrdersScreen";
 import MyOrderDetailsScreen from "../screens/MyOrderDetailsScreen";
-import UserShippingAddressScreen from '../screens/UserShippingAddressScreen'
+import UserShippingAddressScreen from "../screens/UserShippingAddressScreen";
 import EditUserShippingAddressScreen from "../screens/EditUserShippingAddressScreen";
 import UserSettingsScreen from "../screens/UserSettingsScreen";
+import SettingsChangePasswordScreen from "../screens/SettingsChangePasswordScreen";
+import SettingsLanguageScreen from "../screens/SettingsLanguageScreen";
+import MyReviewScreen from "../screens/MyReviewScreen";
+import ShopAdressScreen from "../screens/ShopAdressScreen";
+import SettingsCountryScreen from "../screens/SettingsCountryScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -228,6 +233,28 @@ function HomeStackfunc() {
         name="NotificationDetailScreen"
         component={NotificationDetailScreen}
       />
+      <HomeStack.Screen
+        name="ProductsPageScreen"
+        component={ProductsPageScreen}
+      />
+      <HomeStack.Screen
+        name="ProductDetailsScreen"
+        component={ProductDetailsScreen}
+      />
+      
+    
+      <HomeStack.Screen
+        name="ProductsComparePage"
+        component={ProductsComparePage}
+      />
+      <HomeStack.Screen
+        name="ProductDetailsCompareScreen"
+        component={ProductDetailsCompareScreen}
+      />
+      <HomeStack.Screen
+        name="ShoppingCartScreen"
+        component={ShoppingCartScreen}
+      />
     </HomeStack.Navigator>
   );
 }
@@ -321,7 +348,7 @@ function CartStackfunc() {
         name="ShippingMethodScreen"
         component={ShippingMethodScreen}
       />
-       <CartStack.Screen name="HomeWalletScreen" component={HomeWalletScreen} />
+      <CartStack.Screen name="HomeWalletScreen" component={HomeWalletScreen} />
       <CartStack.Screen
         name="NotificationsScreen"
         component={NotificationsScreen}
@@ -339,7 +366,10 @@ const userStack = createNativeStackNavigator();
 function userStackfunc() {
   return (
     <userStack.Navigator screenOptions={{ headerShown: false }}>
-      <userStack.Screen name="UserAccountScreen" component={UserAccountScreen} />
+      <userStack.Screen
+        name="UserAccountScreen"
+        component={UserAccountScreen}
+      />
       <HomeStack.Screen name="HomeWalletScreen" component={HomeWalletScreen} />
       <userStack.Screen
         name="NotificationsScreen"
@@ -349,29 +379,35 @@ function userStackfunc() {
         name="NotificationDetailScreen"
         component={NotificationDetailScreen}
       />
-      <userStack.Screen
-        name="MyOrdersScreen"
-        component={MyOrdersScreen}
-      />
+      <userStack.Screen name="MyOrdersScreen" component={MyOrdersScreen} />
       <userStack.Screen
         name="MyOrderDetailsScreen"
         component={MyOrderDetailsScreen}
       />
-       <userStack.Screen
+      <userStack.Screen
         name="UserShippingAddressScreen"
         component={UserShippingAddressScreen}
       />
 
-        <userStack.Screen
+      <userStack.Screen
         name="EditUserShippingAddressScreen"
         component={EditUserShippingAddressScreen}
       />
-       <userStack.Screen
+      <userStack.Screen
         name="UserSettingsScreen"
         component={UserSettingsScreen}
       />
-
-
+      <userStack.Screen
+        name="SettingsChangePasswordScreen"
+        component={SettingsChangePasswordScreen}
+      />
+      <userStack.Screen
+        name="SettingsLanguageScreen"
+        component={SettingsLanguageScreen}
+      />
+      <userStack.Screen name="MyReviewScreen" component={MyReviewScreen} />
+      <userStack.Screen name="ShopAdressScreen" component={ShopAdressScreen} />
+      <userStack.Screen name="SettingsCountryScreen" component={SettingsCountryScreen} />
     </userStack.Navigator>
   );
 }

@@ -17,7 +17,7 @@ import Button from "../components/common/Button";
 import Textinputs from "../components/common/Textinputs";
 const WIDTH = Dimensions.get("window").width;
 
-export default function RegistrationScreen({navigation}) {
+export default function RegistrationScreen({ navigation }) {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");

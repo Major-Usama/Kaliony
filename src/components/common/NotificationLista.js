@@ -8,17 +8,17 @@ import {
 import React from "react";
 
 const WIDTH = Dimensions.get("window").width;
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 
 export default function NotificationLista() {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
-    onPress={()=>navigation.navigate('NotificationDetailScreen',
-    {
-      title:"Hot Sale (Not Readed )",
-    }
-    )}
+      onPress={() =>
+        navigation.navigate("NotificationDetailScreen", {
+          title: "Hot Sale (Not Readed )",
+        })
+      }
       activeOpacity={0.7}
       style={styles.notificationListContainer}
     >

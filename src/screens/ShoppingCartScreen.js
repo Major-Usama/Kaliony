@@ -66,14 +66,15 @@ export default function ShoppingCartScreen({ navigation }) {
           </View>
 
           <View style={styles.homeHeaderRightContainer}>
-            <TouchableOpacity
+          <View style={{marginRight:20,}} />
+            {/* <TouchableOpacity
               onPress={() => navigation.navigate("HomeWalletScreen")}
             >
               <Image
                 style={{ width: 30, height: 30, marginRight: 10 }}
                 source={require("../assets/icons/wallet.png")}
               />
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <TouchableOpacity
               onPress={() => navigation.navigate("NotificationsScreen")}

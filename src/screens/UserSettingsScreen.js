@@ -22,9 +22,9 @@ export default function UserSettingsScreen({ navigation }) {
   const [email, setEmail] = React.useState("edoterakyan@gmail.com");
   const [phone, setPhone] = React.useState("+374 10 50 10");
 
-  const [svalue1, setSValue1] = React.useState(true);
-  const [svalue2, setSValue2] = React.useState(true);
-  const [svalue3, setSValue3] = React.useState(true);
+  const [svalue1, setSValue1] = React.useState(false);
+  const [svalue2, setSValue2] = React.useState(false);
+  const [svalue3, setSValue3] = React.useState(false);
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
@@ -37,7 +37,7 @@ export default function UserSettingsScreen({ navigation }) {
 
         <View style={styles.userShippingInputsMainContainer}>
           <View style={styles.userShippingInputsFirstRow}>
-            <View style={{ width: 200 }}>
+            <View style={{ width: 220 }}>
               <UserTextinput
                 type="default"
                 value={firstName}
@@ -46,7 +46,7 @@ export default function UserSettingsScreen({ navigation }) {
                 password={false}
               />
             </View>
-            <View style={{ width: 200 }}>
+            <View style={{ width: 220 }}>
               <UserTextinput
                 type="default"
                 value={lastName}
@@ -85,6 +85,7 @@ export default function UserSettingsScreen({ navigation }) {
         <Text style={styles.personalInfoText}>Password</Text>
 
         <TouchableOpacity
+          onPress={() => navigation.navigate("SettingsChangePasswordScreen")}
           style={styles.settingsPasswordContainer}
           activeOpacity={0.7}
         >
@@ -95,7 +96,7 @@ export default function UserSettingsScreen({ navigation }) {
           </View>
 
           <Image
-            style={{ width: 6, height: 14, tintColor: "#909090" }}
+            style={{ width: 8, height: 14, tintColor: "#909090" }}
             source={require("../assets/images/products/arrow-right.png")}
           />
         </TouchableOpacity>
@@ -173,6 +174,22 @@ export default function UserSettingsScreen({ navigation }) {
           <Text style={styles.personalInfoText}>Settings</Text>
 
           <TouchableOpacity
+            onPress={() => navigation.navigate("SettingsCountryScreen")}
+            style={styles.settingsPasswordContainer}
+            activeOpacity={0.7}
+          >
+            <View>
+              <Text style={styles.salesText}>Country</Text>
+            </View>
+
+            <Image
+              style={{ width: 8, height: 14, tintColor: "#909090" }}
+              source={require("../assets/images/products/arrow-right.png")}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate("SettingsLanguageScreen")}
             style={styles.settingsPasswordContainer}
             activeOpacity={0.7}
           >
@@ -181,7 +198,7 @@ export default function UserSettingsScreen({ navigation }) {
             </View>
 
             <Image
-              style={{ width: 6, height: 14, tintColor: "#909090" }}
+              style={{ width: 8, height: 14, tintColor: "#909090" }}
               source={require("../assets/images/products/arrow-right.png")}
             />
           </TouchableOpacity>
@@ -195,7 +212,7 @@ export default function UserSettingsScreen({ navigation }) {
             </View>
 
             <Image
-              style={{ width: 6, height: 14, tintColor: "#909090" }}
+              style={{ width: 8, height: 14, tintColor: "#909090" }}
               source={require("../assets/images/products/arrow-right.png")}
             />
           </TouchableOpacity>

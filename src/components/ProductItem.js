@@ -7,23 +7,23 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 const WIDTH = Dimensions.get("window").width;
 
 export default function ProductItem(props) {
   const navigation = useNavigation();
   return (
     <View style={styles.itemproductcontainer}>
-      <TouchableOpacity 
-      onPress={()=>navigation.navigate('ProductDetailsScreen',
-      {
-        image:props.image,
-        title:props.title,
-        price:props.price,
-      }
-      
-      )}
-      activeOpacity={0.7}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("ProductDetailsScreen", {
+            image: props.image,
+            title: props.title,
+            price: props.price,
+          })
+        }
+        activeOpacity={0.7}
+      >
         <Image style={styles.productImage} source={props.image} />
       </TouchableOpacity>
 
@@ -33,14 +33,15 @@ export default function ProductItem(props) {
 
       <View style={{ alignSelf: "flex-start" }}>
         <TouchableOpacity
-        onPress={()=>navigation.navigate('ShoppingCartScreen',
-        {
-          image:props.image,
-          title:props.title,
-          price:props.price,
-        }
-        )}
-        style={styles.button}>
+          onPress={() =>
+            navigation.navigate("ShoppingCartScreen", {
+              image: props.image,
+              title: props.title,
+              price: props.price,
+            })
+          }
+          style={styles.button}
+        >
           <Text style={styles.addtoCartText}>Add to Cart</Text>
         </TouchableOpacity>
       </View>

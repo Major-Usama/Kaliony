@@ -82,14 +82,15 @@ export default function ProductDetailsScreen({ navigation, route }) {
           />
 
           <View style={styles.homeHeaderRightContainer}>
-            <TouchableOpacity
+          <View style={{marginRight:20,}} />
+            {/* <TouchableOpacity
               onPress={() => navigation.navigate("HomeWalletScreen")}
             >
               <Image
                 style={{ width: 30, height: 30, marginRight: 10 }}
                 source={require("../assets/icons/wallet.png")}
               />
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <TouchableOpacity
               onPress={() => navigation.navigate("NotificationsScreen")}
@@ -228,8 +229,9 @@ export default function ProductDetailsScreen({ navigation, route }) {
         </TouchableOpacity>
 
         <TouchableOpacity
-        onPress={()=>navigation.navigate('ShoppingCartScreen')}
-        style={styles.button}>
+          onPress={() => navigation.navigate("ShoppingCartScreen")}
+          style={styles.button}
+        >
           <Text style={styles.addtoCartText}>Add to Cart</Text>
         </TouchableOpacity>
       </View>
@@ -253,8 +255,7 @@ const styles = StyleSheet.create({
   homeHeaderRightContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 20,
-    marginTop: 20,
+    marginTop: Platform.OS === "android" ? 0 : 20,
   },
 
   productImage: {

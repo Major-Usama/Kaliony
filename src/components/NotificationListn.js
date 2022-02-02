@@ -1,11 +1,6 @@
-import {
-  Dimensions,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-} from "react-native";
+import { Dimensions, StyleSheet, Text, TouchableOpacity } from "react-native";
 import React from "react";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 
 const WIDTH = Dimensions.get("window").width;
 
@@ -13,11 +8,11 @@ export default function NotificationListn() {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
-    onPress={()=>navigation.navigate('NotificationDetailScreen',
-    {
-      title:"Readed notification",
-    }
-    )}
+      onPress={() =>
+        navigation.navigate("NotificationDetailScreen", {
+          title: "Readed notification",
+        })
+      }
       activeOpacity={0.7}
       style={styles.notificationListContainer}
     >

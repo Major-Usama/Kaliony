@@ -12,9 +12,11 @@ const WIDTH = Dimensions.get("window").width;
 
 export default function UserAccountCard(props) {
   return (
-    <TouchableOpacity 
-    onPress={props.onPress}
-    activeOpacity={0.8} style={styles.userCardContainer}>
+    <TouchableOpacity
+      onPress={props.onPress}
+      activeOpacity={0.8}
+      style={styles.userCardContainer}
+    >
       <View>
         <Text style={styles.cardTitle}>{props.title}</Text>
         <Text style={styles.cardSubTitle}>{props.subtitle}</Text>
